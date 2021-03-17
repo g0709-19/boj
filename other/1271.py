@@ -1,0 +1,6 @@
+i = input()
+s = i.split()
+n = int(s[0])
+m = int(s[1])
+print(n//m)
+print(n%m)

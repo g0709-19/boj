@@ -65,4 +65,16 @@ int main() {
 		}
 		else if (c.compare("size") == 0) {
 			queue.size();
-
+		}
+		else if (c.compare("empty") == 0) {
+			queue.empty();
+		}
+		else if (c.compare("front") == 0) {
+			queue.front();
+		}
+		else if (c.compare("back") == 0) {
+			queue.back();
+		}
+	}
+	return 0;
+}

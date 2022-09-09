@@ -1,33 +1,30 @@
 #include <iostream>
-#include <fstream>
 
 using namespace std;
 
 int main() {
-  int M;
-  ifstream input("input");
-  ifstream output("output");
-  cout << (((1 << 21) - 1)) << " " << (0xFFFFF) << '\n';
-  input >> M;
+  cin.tie(0)->sync_with_stdio(0);
   int S = 0;
+  int M;
+  cin >> M;
   while (M-- != 0) {
-    string command;
     int x;
-    input >> command >> x;
-    --x;
+    string command;
+    cin >> command;
     if (command == "add") {
-      S |= 1 << x;
+      cin >> x;
+      S |= (1 << x);
     } else if (command == "remove") {
+      cin >> x;
       S &= ~(1 << x);
     } else if (command == "check") {
-      int check = S & 1 << x ? 1 : 0;
-      int answer = 0;
-      output >> answer;
-      cout << check << " - " << answer << " // " << (check == answer ? "O" : "X") << '\n';
+      cin >> x;
+      cout << (S & 1 << x ? 1 : 0) << '\n';
     } else if (command == "toggle") {
-      S ^= 1 << x;
+      cin >> x;
+      S ^= (1 << x);
     } else if (command == "all") {
-      S = 0xFFFFF;
+      S = (1 << 21) - 1;
     } else if (command == "empty") {
       S = 0;
     }
